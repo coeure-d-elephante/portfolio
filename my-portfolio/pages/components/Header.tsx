@@ -1,10 +1,14 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import { Social } from "../../typings";
+import Link from "next/link";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-function Header({}: Props) {
+function Header({ socials }: Props) {
   return (
     <header
       className="sticky top-0 p-5 flex items-start justify-between max-w-7xl
@@ -26,16 +30,14 @@ function Header({}: Props) {
         }}
         className="flex flex-row items-center"
       >
-        <SocialIcon
-          url="https://linkedin.com/in/ssjavier"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://www.youtube.com/channel/UCwv0JgO0I6Sf0f6RmV8Wttw"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
 
       <motion.div
@@ -54,15 +56,21 @@ function Header({}: Props) {
         }}
         className="flex flex-row items-center text-gray-300 cursor-pointer"
       >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
-          Get In Touch
-        </p>
+        <div>
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        </div>
+        <Link href="#contact">
+          <div>
+            <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+              Get In Touch
+            </p>
+          </div>
+        </Link>
       </motion.div>
     </header>
   );

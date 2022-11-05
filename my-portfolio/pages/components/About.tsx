@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../../typings";
+import { urlFor } from "../../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{
@@ -35,7 +39,7 @@ function About({}: Props) {
           x: 0,
         }}
         viewport={{ once: true }}
-        src="https://cdn.sanity.io/images/85zm3n1g/production/ce8c565025068fdb3493955162ed54eafc0e888a-2048x1366.jpg"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
         md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
@@ -47,7 +51,9 @@ function About({}: Props) {
           background
         </h4>
         <p className="text-base">
-          Junior Dev | Student at Harvard university | Navy Veteran
+          {pageInfo?.backgroundInformation}
+          <br />* This portfolio was built using Next.js, Typescript, and React.
+          With Framer Motion, Tailwind CSS, and Sanity.io
         </p>
       </div>
     </motion.div>
