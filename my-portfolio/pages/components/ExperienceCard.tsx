@@ -16,7 +16,7 @@ function ExperienceCard({ experience }: Props) {
 scrollbar scrollbar-track-gray-400/20
     scrollbar-thumb-[#F7AB0A]/80"
     >
-      {experience.companyImage && (
+      {experience?.companyImage && (
         <motion.img
           initial={{
             y: -100,
@@ -29,7 +29,7 @@ scrollbar scrollbar-track-gray-400/20
           viewport={{ once: true }}
           className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover
        object-center"
-          src={urlFor(experience.companyImage).url()}
+          src={urlFor(experience?.companyImage).url()}
         />
       )}
 
@@ -43,19 +43,19 @@ scrollbar scrollbar-track-gray-400/20
         </div>
       </div>
       <p className="uppercase py-5 text-gray-300">
-        {new Date(experience.dateStarted).toDateString()}
+        {new Date(experience?.dateStarted).toDateString()}
         {" - "}
         {experience.isCurrentlyWorkingHere
           ? "Present"
-          : new Date(experience.dateEnded).toDateString()}
+          : new Date(experience?.dateEnded).toDateString()}
       </p>
 
       <ul
         className="list-disc space-y-4 ml-5 text-lg max-h-75 overflow-scroll scrollbar-thin
      pr-10 scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80"
       >
-        {experience.points.map((point, i) => (
-          <li key={experience._id}>{point}</li>
+        {experience?.points.map((point, i) => (
+          <li key={i}>{point}</li>
         ))}
       </ul>
     </article>

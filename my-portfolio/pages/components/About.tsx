@@ -1,13 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { PageInfo } from "../../typings";
-import { urlFor } from "../../sanity";
 
-type Props = {
-  pageInfo: PageInfo;
-};
+type Props = {};
 
-function About({ pageInfo }: Props) {
+function About({}: Props) {
   return (
     <motion.div
       initial={{
@@ -39,19 +35,19 @@ function About({ pageInfo }: Props) {
           x: 0,
         }}
         viewport={{ once: true }}
-        src={urlFor(pageInfo?.profilePic).url()}
+        src="https://cdn.sanity.io/images/85zm3n1g/production/74128eb34f74f36b3bf8e17cb530910c93f71003-1932x1880.jpg"
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
         md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
 
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here is a{" "}
-          <span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
-          background
+          <span className="underline decoration-[#F7AB0A]/50">
+            {" "}
+            Here's some background{" "}
+          </span>{" "}
         </h4>
         <p className="text-base">
-          {pageInfo?.backgroundInformation}
           <br />* This portfolio was built using Next.js, Typescript, and React.
           With Framer Motion, Tailwind CSS, and Sanity.io
         </p>

@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { PageInfo } from "../../typings";
 import { urlFor } from "../../sanity";
@@ -13,7 +12,7 @@ type Props = {
 
 function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
-    words: ["Hello 👋🏽", `The name's ${pageInfo?.name}.`, "<CodeEnthusiast/>"],
+    words: ["Hello", `The name's ${pageInfo?.name}.`, "<CodeEnthusiast/>"],
     loop: true,
     delaySpeed: 2000,
   });

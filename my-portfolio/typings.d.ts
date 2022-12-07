@@ -52,14 +52,14 @@ export interface Experience extends SanityBody {
   technologies: Technology[]
 }
 
-export interface Project extends SanityBody {
-  title: string;
-  _type: "project";
-  image: Image;
-  linkToBuild: string;
-  summary: string;
-  technologies: Technology[]
-}
+// export interface Project extends SanityBody {
+//   title: string;
+//   _type: "project";
+//   image: Image;
+//   linkToBuild: string;
+//   summary: string;
+//   technologies: Technology[]
+// }
 
 
 export interface Social extends SanityBody {
