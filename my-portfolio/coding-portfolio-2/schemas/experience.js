@@ -38,11 +38,6 @@ export default {
       },
     },
     {
-      name: "isCurrentlyWorkingHere",
-      title: "IsCurrentlyWorkingHere",
-      type: "boolean",
-    },
-    {
       name: "technologies",
       title: "Technologies",
       type: "array",

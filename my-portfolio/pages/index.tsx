@@ -66,14 +66,6 @@ export default function Home({
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            {/* <Image
-              height={50}
-              width={50}
-              className="rounded-full hover:grayscale-0"
-              alt=""
-              src={urlFor(pageInfo?.heroImage).url()}
-            />
-          */}
             <HomeModernIcon className="text-[#F7AB0A] h-10 w-10 animate-pulse hover:animate-bounce" />
           </div>
         </footer>

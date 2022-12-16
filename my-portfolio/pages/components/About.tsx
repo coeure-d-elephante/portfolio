@@ -44,7 +44,7 @@ function About({}: Props) {
         <h4 className="text-4xl font-semibold">
           <span className="underline decoration-[#F7AB0A]/50">
             {" "}
-            Here's some background{" "}
+            Some background{" "}
           </span>{" "}
         </h4>
         <p className="text-base">
