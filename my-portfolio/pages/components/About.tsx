@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import aboutMe from "../../pics/aboutMe.jpeg";
 
-type Props = {};
-
-function About({}: Props) {
+function About({}) {
   return (
     <motion.div
       initial={{
@@ -22,34 +22,41 @@ function About({}: Props) {
         About
       </h3>
 
-      <motion.img
-        initial={{
-          x: -200,
-          opacity: 0,
-        }}
-        transition={{
-          duration: 1.2,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-        }}
-        viewport={{ once: true }}
-        src="https://cdn.sanity.io/images/85zm3n1g/production/74128eb34f74f36b3bf8e17cb530910c93f71003-1932x1880.jpg"
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
+      <Image
+        src={aboutMe}
+        alt=""
+        height={500}
+        width={500}
+        className="lg:mb-0 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
         md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
 
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
-          <span className="underline decoration-[#F7AB0A]/50">
-            {" "}
-            Some background{" "}
-          </span>{" "}
-        </h4>
-        <p className="text-base">
-          <br />* This portfolio was built using Next.js, Typescript, and React.
-          With Framer Motion, Tailwind CSS, and Sanity.io
+        <h3 className="text-4xl font-semibold">
+          <span className="underline decoration-[#F7AB0A]/50"> About Me </span>{" "}
+        </h3>
+        <p className="text-2xl">
+          <ol>
+            <li className="py-2">
+              1. When I was 13, I immigrated from the Philippines with my
+              family.
+            </li>
+            <li className="py-2">
+              2. I served in the United States Navy fixing fighter jets.
+            </li>
+            <li className="py-2">
+              3. I first learnt to code when I took my first Computer Science
+              class at Harvard University.
+            </li>
+            <li className="py-2">
+              4. I'm currently studying Computer Science at Harvard University
+              Extension School.
+            </li>
+            <li className="py-2">
+              5. I speak multiple languages namely: English, Tagalog, Spanish,
+              conversational French, and basic Korean
+            </li>
+          </ol>
         </p>
       </div>
     </motion.div>

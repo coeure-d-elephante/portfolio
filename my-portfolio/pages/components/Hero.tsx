@@ -3,16 +3,13 @@ import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
-import { PageInfo } from "../../typings";
-import { urlFor } from "../../sanity";
+import profilePic from "../../pics/heroImg.jpeg";
 
-type Props = {
-  pageInfo: PageInfo;
-};
+type Props = {};
 
-function Hero({ pageInfo }: Props) {
+function Hero({}: Props) {
   const [text, count] = useTypewriter({
-    words: ["Hello", `The name's ${pageInfo?.name}.`, "<CodeEnthusiast/>"],
+    words: ["Hi!", `I'm Steph Javier.`, "<CodeEnthusiast/>", "Life Enthusiast"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -23,20 +20,16 @@ function Hero({ pageInfo }: Props) {
     text-center overflow-hidden"
     >
       <BackgroundCircles />
-      {/* <Image 
-      className="relative rounded-full mx-auto object-left-bottom"
-      /> */}
       <Image
-        src={urlFor(pageInfo?.heroImage).url()}
+        src={profilePic}
         alt=""
-        height={175}
-        width={175}
+        height={250}
+        width={250}
         className="relative rounded-full mx-auto object-cover object-left-bottom"
       />
+
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          {pageInfo?.role}
-        </h2>
+        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]"></h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
@@ -51,9 +44,9 @@ function Hero({ pageInfo }: Props) {
           <Link href="#skills">
             <button className="heroButton">Skills</button>
           </Link>
-          {/* <Link href="#projects">
+          <Link href="#projects">
             <button className="heroButton">Projects</button>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>

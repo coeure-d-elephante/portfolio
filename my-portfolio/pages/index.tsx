@@ -2,32 +2,16 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { Experience, PageInfo, Skill, Social } from "../typings";
-import { fetchPageInfo } from "../utils/fetchPageInfo";
 import About from "./components/About";
 import ContactMe from "./components/ContactMe";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
-import { fetchExperiences } from "../utils/fetchExperiences";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocial } from "../utils/fetchSocials";
+import Projects from "./components/Projects";
 import { HomeModernIcon } from "@heroicons/react/24/solid";
 
-type Props = {
-  pageInfo: PageInfo;
-  experiences: Experience[];
-  skills: Skill[];
-  socials: Social[];
-};
-
-export default function Home({
-  pageInfo,
-  experiences,
-  skills,
-  socials,
-}: Props) {
+export default function Home() {
   return (
     <div
       className="bg-[rgb(36,36,36)] text-white h-screen
@@ -37,10 +21,10 @@ export default function Home({
       <Head>
         <title>Javi's Portfolio</title>
       </Head>
-      <Header socials={socials} />
+      <Header />
 
       <section id="hero" className="snap-center">
-        <Hero pageInfo={pageInfo} />
+        <Hero />
       </section>
 
       <section id="about" className="snap-start">
@@ -48,16 +32,16 @@ export default function Home({
       </section>
 
       <section id="experience" className="snap-start">
-        <WorkExperience experiences={experiences} />
+        <WorkExperience />
       </section>
 
       <section id="skills" className="snap-center">
-        <Skills skills={skills} />
+        <Skills />
       </section>
 
-      {/* <section id="projects" className="snap-center">
+      <section id="projects" className="snap-center">
         <Projects />
-      </section> */}
+      </section>
 
       <section id="contact" className="snap-center">
         <ContactMe />
@@ -73,19 +57,3 @@ export default function Home({
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const socials: Social[] = await fetchSocial();
-
-  return {
-    props: {
-      pageInfo,
-      experiences,
-      skills,
-      socials,
-    },
-  };
-};

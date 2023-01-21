@@ -1,13 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
-import { Experience } from "../../typings";
 
-type Props = {
-  experiences: Experience[];
-};
+type Props = {};
 
-function WorkExperience({ experiences }: Props) {
+function WorkExperience({}: Props) {
   return (
     <motion.div
       initial={{
@@ -34,9 +31,7 @@ function WorkExperience({ experiences }: Props) {
       snap-mandatory scrollbar scrollbar-track-gray-400/20
     scrollbar-thumb-[#F7AB0A]/80"
       >
-        {experiences?.map((experience) => (
-          <ExperienceCard key={experience._id} experience={experience} />
-        ))}
+        <ExperienceCard />
       </div>
     </motion.div>
   );

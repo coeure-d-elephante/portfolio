@@ -1,14 +1,11 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { Social } from "../../typings";
 import Link from "next/link";
 
-type Props = {
-  socials: Social[];
-};
+type Props = {};
 
-function Header({ socials }: Props) {
+function Header({}: Props) {
   return (
     <header
       className="sticky top-0 p-5 flex items-start justify-between max-w-7xl
@@ -28,16 +25,23 @@ function Header({ socials }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className="flex flex-row items-center"
+        className="flex flex-row items-center "
       >
-        {socials.map((social) => (
-          <SocialIcon
-            key={social._id}
-            url={social.url}
-            fgColor="gray"
-            bgColor="transparent"
-          />
-        ))}
+        <SocialIcon
+          url="https://www.youtube.com/channel/UCwv0JgO0I6Sf0f6RmV8Wttw"
+          fgColor="grey"
+          bgColor="transparent"
+        />
+        <SocialIcon
+          url="https://www.linkedin.com/in/ssjavier/"
+          fgColor="grey"
+          bgColor="transparent"
+        />
+        <SocialIcon
+          url="https://github.com/coeure-d-elephante"
+          fgColor="grey"
+          bgColor="transparent"
+        />
       </motion.div>
 
       <motion.div
@@ -60,7 +64,7 @@ function Header({ socials }: Props) {
           <SocialIcon
             className="cursor-pointer"
             network="email"
-            fgColor="gray"
+            fgColor="grey"
             bgColor="transparent"
           />
         </div>
