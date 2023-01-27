@@ -19,7 +19,7 @@ function ContactMe({}: Props) {
       <div className="flex flex-col space-y-10">
         <h4 className="text-4xl font-semibold text-center">
           <span className="decoration-[#F7AB0A]/50 underline">
-            Let's Connect!
+            Lets Connect!
             <br />
           </span>
           😁

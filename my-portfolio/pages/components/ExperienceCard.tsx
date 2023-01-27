@@ -110,8 +110,8 @@ scrollbar scrollbar-track-gray-400/20
           {" - "}
           {"Jul 2022"}
         </p>
-        <ul
-          className="list-disc space-y-4 ml-5 text-lg max-h-75 overflow-scroll scrollbar-thin
+        <ul 
+          className="list-disc sm:list-disc md:list-disc lg:list-disc space-y-4 ml-5 text-lg max-h-75 overflow-scroll scrollbar-thin
      pr-10 scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80"
         >
           <li>
