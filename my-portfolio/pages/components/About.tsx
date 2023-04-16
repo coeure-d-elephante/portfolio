@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Image from "next/image";
-import aboutMe from "../../pics/aboutMe.jpeg";
+import aboutMe from "public/pics/aboutMe.jpeg";
 
 function About({}) {
   return (

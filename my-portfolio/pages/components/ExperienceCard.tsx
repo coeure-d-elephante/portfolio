@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { motion } from "framer-motion";
-import rosehip from "../../pics/experiencePics/rosehip.jpeg";
-import generalSymbol from "../../pics/experiencePics/genSymbol.jpeg";
+import rosehip from "public/pics/experiencePics/rosehip.jpeg";
+import generalSymbol from "public/pics/experiencePics/genSymbol.jpeg";
 
 import Image from "next/image";
 
